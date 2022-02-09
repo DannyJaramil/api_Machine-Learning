@@ -1,5 +1,4 @@
 from fastapi import FastAPI,Request
-from hause_class import Hause
 import pickle
 
 app = FastAPI()
@@ -9,15 +8,13 @@ def load_model():
     global model
     model =pickle.load(open("ml_model_regression.pkl","rb"))
     
-    
-@app.get("/")
+@app.get("/author")
 def index():
     return {
         
         "msg" :"Machine Learning",
-        "author": "Danny Jaramillo"
+        "author": "Ing. Danny Jaramillo"
     }
-
 
 @app.post("/predict")
 async def get_home_price(request:Request):

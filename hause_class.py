@@ -1,3 +1,0 @@
-class Hause:
-    año = ""
-    mes = ""
