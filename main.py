@@ -8,7 +8,7 @@ def load_model():
     global model
     model =pickle.load(open("ml_model_regression.pkl","rb"))
     
-@app.get("/author")
+@app.get("/api/author")
 def index():
     return {
         
@@ -16,7 +16,7 @@ def index():
         "author": "Ing. Danny Jaramillo"
     }
 
-@app.post("/predict")
+@app.post("/api/predict")
 async def get_home_price(request:Request):
        formdata = await request.form()
        hause_attr=[[
